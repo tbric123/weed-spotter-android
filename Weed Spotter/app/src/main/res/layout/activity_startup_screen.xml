@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:orientation="vertical"
+    android:weightSum="1"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="knightwing.ws.weedspotter.Views.Activities.SubmissionStages.StartupScreenActivity">
+
+    <!-- Weed Spotters Network Banner -->
+
+    <!-- Start Button -->
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="88dp"
+        android:layout_weight="0.04"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/banner" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="0.00"
+        android:text="Welcome!"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/disclaimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/usage_suggestion"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorButton"
+            android:onClick="launchWizard"
+            android:text="@string/start_button_text"
+            android:layout_margin="8dp"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/viewPendingSubmissions"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorButton"
+            android:text="@string/view_pending_submissions_text"
+            android:onClick="viewPendingSubmissions"
+            android:layout_margin="8dp"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/pendingSubmissionCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/startingUpPrompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp"
+            android:textColor="#ffffff" />
+
+        <ProgressBar
+            android:id="@+id/startingUp"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.04" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp">
+            <ImageButton android:id="@+id/infobtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/infoicon"
+                android:layout_gravity="end|bottom"
+                android:layout_marginTop="8dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:onClick="accessExtras"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="knightwing.ws.weedspotter">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- cutierobot for saving image to folder -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/title_startup_screen"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Splash Screen -->
+        <activity
+            android:name=".Views.Activities.SubmissionStages.SplashScreenActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Startup Screen -->
+        <activity
+            android:name=".Views.Activities.SubmissionStages.StartupScreenActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <!-- Taking Photos, Filling in Details, Sending Email -->
+        <activity
+            android:name=".Views.PlantIdentification.ReportActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_report"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".Models.PlantIdentification.LocationService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Submission Completion -->
+        <activity
+            android:name=".Views.Activities.SubmissionStages.SubmissionCompleteActivity"
+            android:configChanges="orientation"
+            android:label="Submission Successful!"
+            android:screenOrientation="portrait" />
+
+        <!-- Submission stored for later -->
+        <activity
+            android:name=".Views.Activities.SubmissionStages.SubmissionStoredActivity"
+            android:configChanges="orientation"
+            android:label="Submission Stored"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="knightwing.ws.weedspotter.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <!--
+        <paths xmlns:android="http://schemas.android.com/apk/res/android">
+            <external-path android:name="weedSpotters" android:path="images/"/>
+            ...
+        </paths>
+        -->
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <!-- Location Screen -->
+        <activity
+            android:name=".Views.Activities.SubmissionStages.CurrentLocationActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_current_location"
+            android:screenOrientation="portrait" />
+
+        <!-- Pending Submissions -->
+        <activity
+            android:name=".Views.PendingSubmissions.PendingSubmissionListActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_item_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="knightwing.ws.weedspotter.Views.Activities.SubmissionStages.StartupScreenActivity" />
+        </activity>
+        <activity
+            android:name=".Views.PendingSubmissions.PendingSubmissionDetailActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".Views.PendingSubmissions.PendingSubmissionListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Views.PendingSubmissions.PendingSubmissionListActivity" />
+        </activity>
+        <activity
+            android:name=".Views.Extras.AppExtrasActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_extras"
+            android:parentActivityName=".Views.Activities.SubmissionStages.StartupScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="knightwing.ws.weedspotter.Views.Activities.SubmissionStages.StartupScreenActivity" />
+        </activity>
+    </application>
+
+</manifest>

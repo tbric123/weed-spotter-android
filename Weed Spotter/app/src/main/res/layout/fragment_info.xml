@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="knightwing.ws.weedspotter.Views.PlantIdentification.ReportActivity"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- Name Field -->
+        <EditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint= "@string/collector_name_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName" />
+
+        <!-- Submission Date Field -->
+
+        <!-- Closest Town/Suburb Field -->
+        <EditText
+            android:id="@+id/closestLocationField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/closest_location"
+            android:inputType="textPersonName"
+            android:imeOptions="actionDone"/>
+
+        <!-- Prompt to select a plant type -->
+        <TextView
+            android:id="@+id/plantTypeTitle"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/plant_type"
+            />
+
+        <!-- Plant Types to select -->
+        <Spinner
+            android:id="@+id/plantTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextField"
+            android:spinnerMode="dialog" />
+
+        <!-- Prompt to select a plant growth behaviour -->
+        <TextView
+            android:id="@+id/plantGrowthTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/plant_growth"
+            />
+
+        <!-- Plant Growth behaviours to select -->
+        <Spinner
+            android:id="@+id/plantGrowthSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextField"
+            android:spinnerMode="dialog" />
+
+        <!-- Opens up email program to send entire submission as an email -->
+        <TextView
+            android:id="@+id/makingEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#0000FF"/>
+    </LinearLayout>
+
+    <knightwing.ws.weedspotter.Views.Widgets.PageIndicatorView
+        android:id="@+id/page_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_above="@id/bottom_navigation_bar"/>
+
+    <RelativeLayout android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="@dimen/lower_nav_above_space"
+        android:layout_marginBottom="65dp">
+
+        <ImageButton
+            android:id="@+id/backbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@drawable/backbutton" />
+
+
+        <ImageButton
+            android:id="@+id/forwardbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@drawable/forwardbutton" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

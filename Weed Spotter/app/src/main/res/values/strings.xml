@@ -1,0 +1,78 @@
+<resources xmlns:android="http://schemas.android.com/tools">
+    <!-- Screen Titles -->
+    <string name="title_startup_screen">Weed Spotter</string>
+    <string name="title_location_finder">Your Location</string>
+    <string name="title_activity_report">Request a plant identification</string>
+
+    <!-- Settings -->
+    <string name="action_settings">Settings</string>
+    <string name="file_provider_authority">knightwing.ws.weedspotter.fileprovider</string>
+
+    <!-- Placeholder Fragment -->
+    <string name="section_format">$s</string>
+
+    <!-- Start Screen -->
+    <string name="usage_suggestion"><b>NOTE:</b> For best results, please use this app outdoors.
+        You must be connected to the Internet to send submissions.</string>
+    <string name="start_button_text">Start</string>
+    <string name="view_pending_submissions_text">View Unsent Submissions</string>
+    <string name="extras_text">Extras</string>
+
+    <!-- Finding location -->
+    <string name="gps_waiting">Finding your location...</string>
+    <string name="gps_found">""</string>
+    <string name="location_title_bar"></string>
+    <string name="location_skip_state_key">Location Skip</string>
+
+    <!-- Information Filling In -->
+    <string name="name_storage_key">Name Storage</string>
+    <string name="collector_name_hint">Collector Name <b>*</b></string>
+    <string name="weed_spotter_name"></string>
+    <string name="plant_type">Plant Type:</string>
+    <string name="plant_growth">Is the plant:</string>
+    <string name="closest_location">Closest Town or Suburb <b>*</b></string>
+    <string name="location_hint">Your whereabouts <b>*</b></string>
+    <string-array name="plant_types">
+        <item>Tree</item>
+        <item>Shrub</item>
+        <item>Vine</item>
+        <item>Herb</item>
+        <item>Grass</item>
+        <item>Other</item>
+        <item>Not Sure</item>
+    </string-array>
+
+    <string-array name="plant_growths">
+        <item>Cultivated</item>
+        <item>Growing Wild</item>
+        <item>Not Sure</item>
+    </string-array>
+
+    <!-- Email -->
+    <string name="queensland_herbarium_email">weed_spotters@DSITIAQLD.onmicrosoft.com</string>
+    <string name="email_making">Writing submission details...</string>
+    <string name="archiving">Attaching photos...</string>
+    <string name="notes_prompt">"Anything else we need to know (e.g. habitat, leaf arrangement, abundance)?"</string>
+    <!-- Photos -->
+    <string name="album_name">Weedspotter</string>
+    <string name="capture_photo_button_text">Capture Photo</string>
+
+    <!-- Submission Completion Screen -->
+    <string name="completion_message">Your plant identification request has been sent to the
+        Queensland Herbarium for identification. For more information or to discuss your submission,
+        call <b>(07) 3896 9318</b> between 9am-5pm weekdays.</string>
+    <string name="start_over_button_text">Start Over</string>
+
+    <!-- Submission Stored Screen -->
+    <string name="store_notification_message">You are not currently connected to the internet.
+        Your submission will be for later sending - it can be accessed via the <b>View Unsent Submissions</b>
+        button on the start screen.</string>
+
+    <!-- Your Location screen -->
+    <string name="title_activity_current_location">Your Location</string>
+
+    <!-- Pending Submissions list -->
+    <string name="title_item_list">Unsent Submissions</string>
+    <string name="title_item_detail">Submission Details</string>
+    <string name="title_activity_extras">Extras</string>
+</resources>
